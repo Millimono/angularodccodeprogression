@@ -43,6 +43,10 @@ export class AppComponent implements OnInit {
     console.log(this.etudiants[id]);
   }
 
+  personneselectionne(p: Personne) {
+    console.log('vous avez clické sur :', p);
+  }
+
   // ngOnChanges(): void {
   //   console.log('AppComponent: ngOnChanges');
   // }

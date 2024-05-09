@@ -1,6 +1,8 @@
 <h1>Welcome Student</h1>
 
-<app-personnes [nom]='etudiants[0].lastName'></app-personnes>
+<app-personnes (personneselected)="personneselectionne($event)" [personne]='etudiants[0]' ></app-personnes>
+<app-personnes [personne]='etudiants[1]'></app-personnes>
+<app-personnes [personne]='etudiants[2]'></app-personnes>
 
 <!-- <ul>
   <li *ngFor="let student of etudiants">
