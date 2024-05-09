@@ -1,0 +1,28 @@
+.Personnes {
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.personne-card {
+ border: 1px solid #ddd;
+    border-radius: 4px;
+ padding: 16px;
+    margin: 16px;
+    width: 300px
+}
+
+.personne-Name {
+     font-size: 1.2em;
+    margin-bottom: 8px;}
+    
+
+.personne-description {
+     font-size: 0.9em;}
+      img {
+     max-width: 100%;
+     height: auto;
+     display: block;
+     margin-bottom: 8px;}
+    
+    

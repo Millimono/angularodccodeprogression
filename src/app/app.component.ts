@@ -23,13 +23,24 @@ export class AppComponent implements OnInit {
 
   etudiants: Personne[] = personnes;
 
+  personneselected: Personne | undefined;
+
   ngOnInit(): void {
     console.table(this.etudiants);
-    this.SelectStdent(this.etudiants[0].firstName);
+    this.SelectStdent(this.etudiants[0]);
   }
 
-  SelectStdent(StudentsName: string) {
-    console.log(`Vous avez Mr ${StudentsName}`);
+  SelectStdent(StudentsName: Personne) {
+    console.log(`Vous avez Mr ${StudentsName.firstName}`);
+  }
+
+  OnpersnneClicked(personneid: string) {
+    const id: number = +personneid;
+    console.log(id);
+
+    this.personneselected = this.etudiants[id];
+
+    console.log(this.etudiants[id]);
   }
 
   // ngOnChanges(): void {

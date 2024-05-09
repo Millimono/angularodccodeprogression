@@ -1,10 +1,22 @@
 <h1>Welcome Student</h1>
 
-<ul>
+<app-personnes [nom]='etudiants[0].lastName'></app-personnes>
+
+<!-- <ul>
   <li *ngFor="let student of etudiants">
       {{ student.firstName }}  {{ student.lastName }} - Age: {{ student.age }}
   </li>
  
 </ul>
 
+<input #input type="number" (keyup.enter)="OnpersnneClicked(input.value)" />
+
+<p *ngIf="personneselected">
+  vous avez selectionné Mr ou Mme 
+  {{personneselected.firstName}} {{personneselected.lastName}}
+</p>
+
+<p *ngIf="!personneselected">
+  pas de personne selectionnée encore 
+</p> -->
 
