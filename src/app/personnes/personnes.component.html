@@ -1,16 +1,23 @@
 <div class="Personnes">
 
-    <div class="personne-card">
+    <div class="personne-card" [ngClass]="CouleurParAge()">
         {{index}}
 
       <div class="personne-Name">
             {{personne.firstName}}   {{personne.lastName}}
 
         </div>
-            <img width="300" alt="Angular Logo" [src]='personne.picture'>
+
+            <img *ngIf="personne.picture;else noImg" 
+            width="300" alt="Angular Logo" [src]='personne.picture'>
+     
+            <ng-template #noImg> <h1>Pas d'Image </h1></ng-template>
+
+
         <div class="personne-description">
                 {{personne.address}}
         </div>
+        
         <button (click)="OnpersennedView()"> Details sur le personne </button>
     </div>
 </div>

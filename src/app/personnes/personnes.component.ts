@@ -22,4 +22,14 @@ export class PersonnesComponent {
     console.log('personne clické');
     this.personneselected.emit(this.personne);
   }
+
+  CouleurParAge() {
+    if (this.personne.age < 25) {
+      return 'jeune';
+    } else if (this.personne.age > 25 && this.personne.age < 60) {
+      return 'adulte';
+    } else {
+      return 'senior';
+    }
+  }
 }

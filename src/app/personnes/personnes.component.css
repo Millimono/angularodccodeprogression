@@ -25,5 +25,17 @@
      display: block;
      margin-bottom: 8px;
     }
+
+    .jeune {
+        border: 20px solid blue;
+      }
+      
+      .adulte {
+        border: 20px solid green;
+      }
+      
+      .senior {
+        border: 20px solid gray;
+      }
     
     

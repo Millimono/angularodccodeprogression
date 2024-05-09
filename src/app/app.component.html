@@ -1,6 +1,6 @@
 <h1>Welcome Student</h1>
 
-@for (per of etudiants; track per?.id; let index = $index;let count = $count;
+<!-- @for (per of etudiants; track per?.id; let index = $index;let count = $count;
 let first =$first;let last =$last;let odd=$odd;let even =$even) 
 {
   <p> count : {{count}}</p>
@@ -12,11 +12,35 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
   [class.is-last]="last"
   [class.is-odd]="odd"
   [class.is-even]="even"
+  
   ></app-personnes>
 }
 @empty {
   <p>No student Found</p>
-}
+} -->
+
+<app-personnes *ngFor="let per of etudiants;
+ index as index;let first = first;let last = last;
+ let even = even;let odd = odd;"
+
+(personneselected)="personneselectionne($event)" 
+[personne]='per'
+[index]='index' 
+[class.is-first]="first"
+[class.is-last]="last"
+[class.is-odd]="odd"
+[class.is-even]="even"
+
+></app-personnes>
+
+<!-- <app-personnes  *ngFor="let per of (etudiants )  ; index as i; let first = first; let last = last; 
+even as ev ; odd as odd;"
+(PersonneSelected)="OnPersonneSelected($event)" [personne] = "per" 
+[index] = "i +1"   [class.is-first]="first"     [class.is-last]="last"
+[class.is-even]="ev"     [class.is-odd]="odd"
+[noImageTmpl]="noImage"
+class="col s12 m6 l4"
+    /> -->
 
 <!-- <app-personnes [personne]='etudiants[1]'></app-personnes>
 <app-personnes [personne]='etudiants[2]'></app-personnes> -->
