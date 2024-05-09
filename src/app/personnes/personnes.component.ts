@@ -10,6 +10,9 @@ export class PersonnesComponent {
   @Input()
   personne!: Personne;
 
+  @Input()
+  index!: number;
+
   @Output()
   personneselected = new EventEmitter<Personne>();
 
