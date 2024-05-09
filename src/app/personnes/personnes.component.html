@@ -1,6 +1,6 @@
 <div class="Personnes">
 
-    <div class="personne-card" [ngClass]="CouleurParAge()">
+    <div class="personne-card" [ngStyle]="PersonStyle">
         {{index}}
 
       <div class="personne-Name">
@@ -8,15 +8,37 @@
 
         </div>
 
+
+        <div>
             <img *ngIf="personne.picture;else noImg" 
             width="300" alt="Angular Logo" [src]='personne.picture'>
      
-            <ng-template #noImg> <h1>Pas d'Image </h1></ng-template>
+            <ng-template #noImg class="uselikeimg">
+
+                <ng-container *ngTemplateOutlet="noImageTmpl; context : {name : personne.lastName}" >
+                   
+                </ng-container>       
+
+            </ng-template>
+
+        </div>
+
+            
 
 
         <div class="personne-description">
                 {{personne.address}}
         </div>
+
+        <div [ngSwitch]="personne.categorie">
+            <div *ngSwitchCase=" 'dev' " class="dev">Developpeur</div>
+            <div *ngSwitchCase=" 'commercial' " class="com">commercial</div>
+            <div *ngSwitchCase=" 'ingenieur' " class="inge">ingenieur</div>
+            <div *ngSwitchDefault> not defined</div>
+
+        </div>
+     
+      
         
         <button (click)="OnpersennedView()"> Details sur le personne </button>
     </div>

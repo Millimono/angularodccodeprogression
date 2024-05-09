@@ -19,12 +19,16 @@
 
 .personne-description {
      font-size: 0.9em;}
-      img {
+
+    img 
+      {
      max-width: 100%;
      height: auto;
      display: block;
      margin-bottom: 8px;
     }
+
+   
 
     .jeune {
         border: 20px solid blue;
@@ -37,5 +41,17 @@
       .senior {
         border: 20px solid gray;
       }
-    
+
+
+      .dev {
+        border: 2px solid blue;
+      }
+      
+      .com {
+        border: 2px solid green;
+      }
+      
+      .inge {
+        border: 2px solid black;
+      }  
     

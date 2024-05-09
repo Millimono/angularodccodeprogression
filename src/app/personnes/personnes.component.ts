@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  TemplateRef,
+} from '@angular/core';
 import { Personne } from '../personne';
 
 @Component({
@@ -12,6 +18,9 @@ export class PersonnesComponent {
 
   @Input()
   index!: number;
+
+  @Input()
+  noImageTmpl: TemplateRef<any> | null = null;
 
   @Output()
   personneselected = new EventEmitter<Personne>();
@@ -30,6 +39,24 @@ export class PersonnesComponent {
       return 'adulte';
     } else {
       return 'senior';
+    }
+  }
+
+  get ageClass() {
+    return {
+      jeune: this.personne.age < 25,
+      adulte: this.personne.age >= 25 && this.personne.age < 65,
+      senior: this.personne.age >= 65,
+    };
+  }
+
+  get PersonStyle() {
+    if (this.personne.age < 25) {
+      return { border: '20px solid blue' };
+    } else if (this.personne.age >= 25 && this.personne.age < 65) {
+      return { border: '20px solid green' };
+    } else {
+      return { border: '20px solid gray' };
     }
   }
 }
