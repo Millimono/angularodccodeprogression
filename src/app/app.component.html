@@ -1,10 +1,18 @@
 <h1>Welcome Student</h1>
 
-@for (per of etudiants; track per?.id; let index = $index;let count = $count) 
+@for (per of etudiants; track per?.id; let index = $index;let count = $count;
+let first =$first;let last =$last;let odd=$odd;let even =$even) 
 {
   <p> count : {{count}}</p>
-  <app-personnes (personneselected)="personneselectionne($event)" [personne]='per'
-  [index]='index' ></app-personnes>
+  <app-personnes 
+  (personneselected)="personneselectionne($event)" 
+  [personne]='per'
+  [index]='index' 
+  [class.is-first]="first"
+  [class.is-last]="last"
+  [class.is-odd]="odd"
+  [class.is-even]="even"
+  ></app-personnes>
 }
 @empty {
   <p>No student Found</p>

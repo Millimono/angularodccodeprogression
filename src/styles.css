@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+app-personnes.is-even
+{
+    .personne-card {background-color : red;}
+   
+}
+
+app-personnes.is-odd
+{
+    .personne-card {background-color : rgb(154, 225, 106);}
+
+}
