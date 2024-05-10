@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 import { personnes } from './list_Personne';
 import { Personne } from './personne';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -22,19 +23,32 @@ export class AppComponent implements OnInit {
   title = 'OdcFormationCodeEvolutive';
   ab: boolean = false;
 
-  etudiants: Personne[] = personnes;
+  // etudiants: Personne[] = personnes;
+  etudiants: Personne[] = [];
 
   personneselected: Personne | undefined;
   personneName: any;
 
+  constructor(private http: HttpClient) {}
+
   ngOnInit(): void {
     console.table(this.etudiants);
-    this.SelectStdent(this.etudiants[0]);
+    // this.SelectStdent(this.etudiants[0]);
+
+    this.http.get<any[]>('/api/personnes').subscribe(
+      (data) => {
+        this.etudiants = data;
+        console.log('Étudiants chargés:', data);
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des étudiants:', error);
+      }
+    );
   }
 
-  SelectStdent(StudentsName: Personne) {
-    console.log(`Vous avez Mr ${StudentsName.firstName}`);
-  }
+  // SelectStdent(StudentsName: Personne) {
+  //   console.log(`Vous avez Mr ${StudentsName.firstName}`);
+  // }
 
   OnpersnneClicked(personneid: string) {
     const id: number = +personneid;

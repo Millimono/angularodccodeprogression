@@ -4,8 +4,8 @@
         {{index}}
 
       <div class="personne-Name">
-            {{personne.firstName}}   {{personne.lastName}}
-
+            {{personne.firstName | uppercase   }}   {{personne.lastName| uppercase  }}
+            {{personne.created | date :'dd/MM/yyyy hh:mm':'+02'| uppercase  }}
         </div>
 
 

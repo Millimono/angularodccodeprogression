@@ -7,6 +7,9 @@ import { PersonnesComponent } from './personnes/personnes.component';
 import { HighlightDirective } from './highlight.directive';
 import { TooltipDirectiveDirective } from './tooltip-directive.directive';
 import { NgxUnlessDirective } from './directives/ngx-unless.directive';
+import { ExponentialPipe } from './exponential.pipe';
+import { FitredBycategoriePipe } from './fitred-bycategorie.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,13 +17,12 @@ import { NgxUnlessDirective } from './directives/ngx-unless.directive';
     PersonnesComponent,
     HighlightDirective,
     TooltipDirectiveDirective,
-    NgxUnlessDirective
+    NgxUnlessDirective,
+    ExponentialPipe,
+    FitredBycategoriePipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
