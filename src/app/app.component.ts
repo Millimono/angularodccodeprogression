@@ -20,10 +20,12 @@ import { Personne } from './personne';
 })
 export class AppComponent implements OnInit {
   title = 'OdcFormationCodeEvolutive';
+  ab: boolean = false;
 
   etudiants: Personne[] = personnes;
 
   personneselected: Personne | undefined;
+  personneName: any;
 
   ngOnInit(): void {
     console.table(this.etudiants);

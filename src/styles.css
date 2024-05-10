@@ -10,3 +10,16 @@ app-personnes.is-odd
     .personne-card {background-color : rgb(154, 225, 106);}
 
 }
+
+
+.tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+
+    

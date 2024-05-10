@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostBinding,
   Input,
   Output,
   TemplateRef,
@@ -59,4 +60,9 @@ export class PersonnesComponent {
       return { border: '20px solid gray' };
     }
   }
+
+  // @HostBinding('className')
+  // get cssClass() {
+  //   return 'highlight';
+  // }
 }

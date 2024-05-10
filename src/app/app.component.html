@@ -18,6 +18,8 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 @empty {
   <p>No student Found</p>
 } -->
+<div *ngxUnless="false"> hello ma propre structural directive  </div>
+
 <ng-template #noImage let-personneName="name">
   <p> {{personneName}} has no Image Availabe yet </p>
   <img src="/assets/empty.jpeg"/>
@@ -28,9 +30,19 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
  context : {personneName:etudiants[0].firstName} ">
 
 </ng-container> -->
+<ng-template [ngIf]="etudiants[0]" let-per>
+
+<app-personnes
+(personneselected)="personneselectionne($event)"
+ [personne] = 'per'
+[noImageTmpl]="noImage"
+/>
+
+</ng-template>
 
 
-<app-personnes *ngFor="let per of etudiants;
+
+<!-- <app-personnes *ngFor="let per of etudiants;
  index as index;let first = first;let last = last;
  let even = even;let odd = odd;"
 
@@ -42,7 +54,7 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 [class.is-odd]="odd"
 [class.is-even]="even"
 [noImageTmpl]="noImage"
-></app-personnes>
+></app-personnes> -->
 
 <!-- <app-personnes  *ngFor="let per of (etudiants )  ; index as i; let first = first; let last = last; 
 even as ev ; odd as odd;"

@@ -1,6 +1,6 @@
 <div class="Personnes">
 
-    <div class="personne-card" [ngStyle]="PersonStyle">
+    <div class="personne-card" [ngStyle]="PersonStyle" appHighlight #hiliter = 'hl'>
         {{index}}
 
       <div class="personne-Name">
@@ -9,19 +9,17 @@
         </div>
 
 
-        <div>
             <img *ngIf="personne.picture;else noImg" 
             width="300" alt="Angular Logo" [src]='personne.picture'>
      
-            <ng-template #noImg class="uselikeimg">
+            <ng-template #noImg>
 
-                <ng-container *ngTemplateOutlet="noImageTmpl; context : {name : personne.lastName}" >
+                <ng-container *ngTemplateOutlet="noImageTmpl; context :
+                 {name : personne.lastName}" >
                    
                 </ng-container>       
 
             </ng-template>
-
-        </div>
 
             
 
@@ -38,9 +36,9 @@
 
         </div>
      
-      
+              <!-- <button (click)="hiliter.toogle()" appTooltip="Ceci est un tooltip!" > Details sur le personne </button> -->
         
-        <button (click)="OnpersennedView()"> Details sur le personne </button>
+        <button (click)="OnpersennedView()" appTooltip="Ceci est un tooltip!" > Details sur le personne </button>
     </div>
 </div>
     
