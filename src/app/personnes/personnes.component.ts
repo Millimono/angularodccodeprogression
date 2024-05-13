@@ -7,6 +7,7 @@ import {
   TemplateRef,
 } from '@angular/core';
 import { Personne } from '../personne';
+import { PersonnesService } from '../sservice/personnes.service';
 
 @Component({
   selector: 'app-personnes',

@@ -45,6 +45,7 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 
 </ng-template> -->
 
+<ng-container *ngIf="(etudiants$ | async) as etudiants">
 
 
 <app-personnes *ngFor="let per of etudiants;
@@ -60,6 +61,8 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 [class.is-even]="even"
 [noImageTmpl]="noImage"
 ></app-personnes>
+
+</ng-container>
 
 <!-- <app-personnes  *ngFor="let per of (etudiants )  ; index as i; let first = first; let last = last; 
 even as ev ; odd as odd;"

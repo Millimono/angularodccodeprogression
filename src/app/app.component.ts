@@ -5,6 +5,8 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  Inject,
+  InjectionToken,
   OnChanges,
   OnDestroy,
   OnInit,
@@ -13,6 +15,17 @@ import {
 import { personnes } from './list_Personne';
 import { Personne } from './personne';
 import { HttpBackend, HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { PersonnesService } from './sservice/personnes.service';
+import { APP_CONFIG, AppConfig, CONFIG_TOKEN } from './config';
+
+// const PERSONNE_SERVICE = new InjectionToken<PersonnesService>(
+//   'PERSONNE_SERVICE'
+// );
+
+// function PersonneProvider(http: HttpClient): PersonnesService {
+//   return new PersonnesService(http);
+// }
 
 @Component({
   selector: 'app-root',
@@ -24,26 +37,32 @@ export class AppComponent implements OnInit {
   ab: boolean = false;
 
   // etudiants: Personne[] = personnes;
-  etudiants: Personne[] = [];
+  // etudiants: Personne[] = [];
+  etudiants$: Observable<Personne[]> | undefined;
 
   personneselected: Personne | undefined;
   personneName: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private personneService: PersonnesService,
+    @Inject(CONFIG_TOKEN) private config: AppConfig
+  ) {
+    console.log(config);
+  }
 
   ngOnInit(): void {
-    console.table(this.etudiants);
+    // console.table(this.etudiants);
     // this.SelectStdent(this.etudiants[0]);
-
-    this.http.get<any[]>('/api/personnes').subscribe(
-      (data) => {
-        this.etudiants = data;
-        console.log('Étudiants chargés:', data);
-      },
-      (error) => {
-        console.error('Erreur lors du chargement des étudiants:', error);
-      }
-    );
+    // this.http.get<Personne[]>('/api/personnes').subscribe(
+    //   (data) => {
+    //     this.etudiants = data;
+    //     console.log('Étudiants chargés:', data);
+    //   },
+    //   (error) => {
+    //     console.error('Erreur lors du chargement des étudiants:', error);
+    //   }
+    // );
+    this.etudiants$ = this.personneService.loadPersonne();
   }
 
   // SelectStdent(StudentsName: Personne) {
@@ -54,9 +73,9 @@ export class AppComponent implements OnInit {
     const id: number = +personneid;
     console.log(id);
 
-    this.personneselected = this.etudiants[id];
+    // this.personneselected = this.etudiants[id];
 
-    console.log(this.etudiants[id]);
+    // console.log(this.etudiants[id]);
   }
 
   personneselectionne(p: Personne) {

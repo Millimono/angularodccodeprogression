@@ -13,7 +13,7 @@ import {
 export class HighlightDirective {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
-  @HostBinding('style')
+  // @HostBinding('style')
   @HostListener('mouseenter')
   OnMouseenter() {
     this.changeBackgroundColor('yellow');
