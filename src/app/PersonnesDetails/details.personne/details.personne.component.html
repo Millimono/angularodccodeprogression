@@ -1,1 +1,31 @@
-<p>details.personne works!</p>
+<div *ngIf="etudiant$ | async as etudiant; else noData" class="row">
+    <div class="col s12 m10 offset-m1 l8 offset-l2">
+      <div class="card horizontal hoverable">
+        <div class="card-image">
+          <img src="{{ etudiant.picture }}" alt="Photo de {{ etudiant.firstName }} {{ etudiant.lastName }}">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <h4 class="header center-align">{{ etudiant.firstName }} {{ etudiant.lastName }}</h4>
+            <table class="striped highlight responsive-table">
+              <tbody>
+                <tr><td>Prénom:</td><td>{{ etudiant.firstName }}</td></tr>
+                <tr><td>Nom:</td><td>{{ etudiant.lastName }}</td></tr>
+                <tr><td>Âge:</td><td>{{ etudiant.age }}</td></tr>
+                <tr><td>Email:</td><td>{{ etudiant.email }}</td></tr>
+                <tr><td>Adresse:</td><td>{{ etudiant.address }}</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-action">
+            <a class="waves-effect waves-teal btn-flat" (click)="goBack()">Retour</a>
+            <a class="waves-effect waves-teal btn-flat" [routerLink]="['/detaislpersonnes', etudiant.id, 'contacts']">Voir les Contacts</a>
+            <a class="waves-effect waves-teal btn-flat" [routerLink]="['/detaislpersonnes', etudiant.id, 'info']">Voir les Infos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noData><h4 class="center-align">Aucune personne à afficher !</h4></ng-template>
+  <router-outlet></router-outlet> <!-- Angular chargera les composants enfants ici -->
+  

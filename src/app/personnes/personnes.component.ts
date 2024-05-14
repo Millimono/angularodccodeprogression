@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Personne } from '../personne';
 import { PersonnesService } from '../sservice/personnes.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-personnes',
@@ -27,11 +28,14 @@ export class PersonnesComponent {
   @Output()
   personneselected = new EventEmitter<Personne>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
-  OnpersennedView() {
+  OnpersennedView(id: string | number) {
     console.log('personne clické');
+
     this.personneselected.emit(this.personne);
+
+    this.router.navigate(['detaislpersonnes', id]);
   }
 
   CouleurParAge() {

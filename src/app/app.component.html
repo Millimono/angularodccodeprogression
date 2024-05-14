@@ -25,11 +25,23 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
   
 <div *ngxUnless="true"> hello ma propre structural directive </div> -->
 
-<ng-template #noImage let-personneName="name">
+<!-- <ng-template #noImage let-personneName="name">
   <p> {{personneName}} has no Image Availabe yet </p>
   <img src="/assets/empty.jpeg"/>
-</ng-template>
-  
+</ng-template> -->
+<nav>
+  <div class="nav-wrapper">
+     <a href="#" class="brand-logo">Logo</a>
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+             <li><a routerLink="/accueil">Accueil</a></li>
+             <li><a routerLink="/personnes">Personnes</a></li>
+             <li><a routerLink="/contact">Contact</a></li>
+         </ul>
+   </div>
+</nav>
+
+<router-outlet></router-outlet>
+
 <!-- <ng-container 
 *ngTemplateOutlet="noImage ;
  context : {personneName:etudiants[0].firstName} ">
@@ -44,7 +56,7 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 />
 
 </ng-template> -->
-
+<!-- 
 <nav>
    <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
@@ -56,10 +68,10 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
     </div>
 </nav>
   
-  <router-outlet></router-outlet>
+  <router-outlet></router-outlet> -->
   
 
-<ng-container *ngIf="(etudiants$ | async) as etudiants">
+<!-- <ng-container *ngIf="(etudiants$ | async) as etudiants">
 
 
 <app-personnes *ngFor="let per of etudiants;
@@ -76,7 +88,7 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 [noImageTmpl]="noImage"
 ></app-personnes>
 
-</ng-container>
+</ng-container> -->
 
 <!-- <app-personnes  *ngFor="let per of (etudiants )  ; index as i; let first = first; let last = last; 
 even as ev ; odd as odd;"

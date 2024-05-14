@@ -33,24 +33,25 @@ import { APP_CONFIG, AppConfig, CONFIG_TOKEN } from './config';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'OdcFormationCodeEvolutive';
-  ab: boolean = false;
+  // title = 'OdcFormationCodeEvolutive';
+  // ab: boolean = false;
 
-  // etudiants: Personne[] = personnes;
-  // etudiants: Personne[] = [];
-  etudiants$: Observable<Personne[]> | undefined;
+  // // etudiants: Personne[] = personnes;
+  // // etudiants: Personne[] = [];
+  // etudiants$: Observable<Personne[]> | undefined;
 
-  personneselected: Personne | undefined;
-  personneName: any;
+  // personneselected: Personne | undefined;
+  // personneName: any;
 
-  constructor(
-    private personneService: PersonnesService,
-    @Inject(CONFIG_TOKEN) private config: AppConfig
-  ) {
-    console.log(config);
-  }
+  // constructor(
+  //   private personneService: PersonnesService,
+  //   @Inject(CONFIG_TOKEN) private config: AppConfig
+  // ) {
+  //   console.log(config);
+  // }
 
   ngOnInit(): void {
+    console.log('init app');
     // console.table(this.etudiants);
     // this.SelectStdent(this.etudiants[0]);
     // this.http.get<Personne[]>('/api/personnes').subscribe(
@@ -62,25 +63,25 @@ export class AppComponent implements OnInit {
     //     console.error('Erreur lors du chargement des étudiants:', error);
     //   }
     // );
-    this.etudiants$ = this.personneService.loadPersonne();
+    // this.etudiants$ = this.personneService.loadPersonne();
   }
 
-  // SelectStdent(StudentsName: Personne) {
-  //   console.log(`Vous avez Mr ${StudentsName.firstName}`);
+  // // SelectStdent(StudentsName: Personne) {
+  // //   console.log(`Vous avez Mr ${StudentsName.firstName}`);
+  // // }
+
+  // OnpersnneClicked(personneid: string) {
+  //   const id: number = +personneid;
+  //   console.log(id);
+
+  //   // this.personneselected = this.etudiants[id];
+
+  //   // console.log(this.etudiants[id]);
   // }
 
-  OnpersnneClicked(personneid: string) {
-    const id: number = +personneid;
-    console.log(id);
-
-    // this.personneselected = this.etudiants[id];
-
-    // console.log(this.etudiants[id]);
-  }
-
-  personneselectionne(p: Personne) {
-    console.log('vous avez clické sur :', p);
-  }
+  // personneselectionne(p: Personne) {
+  //   console.log('vous avez clické sur :', p);
+  // }
 
   // ngOnChanges(): void {
   //   console.log('AppComponent: ngOnChanges');
