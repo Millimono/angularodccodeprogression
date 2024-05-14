@@ -10,6 +10,8 @@ import { NgxUnlessDirective } from './directives/ngx-unless.directive';
 import { ExponentialPipe } from './exponential.pipe';
 import { FitredBycategoriePipe } from './fitred-bycategorie.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsPersonneComponent } from './PersonnesDetails/details.personne/details.personne.component';
+import { ListesPersonnesComponent } from './ListesPersones/listes.personnes/listes.personnes.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgxUnlessDirective,
     ExponentialPipe,
     FitredBycategoriePipe,
+    DetailsPersonneComponent,
+    ListesPersonnesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

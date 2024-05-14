@@ -1,4 +1,4 @@
-<h1>Welcome Student le nombre 2 son exposant {{2|exponential:3 }} </h1>
+<!-- <h1>Welcome Student le nombre 2 son exposant {{2|exponential:3 }} </h1> -->
 
 <!-- @for (per of etudiants; track per?.id; let index = $index;let count = $count;
 let first =$first;let last =$last;let odd=$odd;let even =$even) 
@@ -44,6 +44,20 @@ let first =$first;let last =$last;let odd=$odd;let even =$even)
 />
 
 </ng-template> -->
+
+<nav>
+   <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a routerLink="/accueil">Accueil</a></li>
+              <li><a routerLink="/personnes">Personnes</a></li>
+              <li><a routerLink="/contact">Contact</a></li>
+          </ul>
+    </div>
+</nav>
+  
+  <router-outlet></router-outlet>
+  
 
 <ng-container *ngIf="(etudiants$ | async) as etudiants">
 
