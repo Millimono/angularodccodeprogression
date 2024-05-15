@@ -7,21 +7,23 @@
   
   <ng-container *ngIf="(etudiants$ | async) as etudiants">
   
-  
-  <app-personnes *ngFor="let per of etudiants;
-   index as index;let first = first;let last = last;
-   let even = even;let odd = odd;"
-  
-  (personneselected)="personneselectionne($event)" 
-  [personne]='per'
-  [index]='index' 
-  [class.is-first]="first"
-  [class.is-last]="last"
-  [class.is-odd]="odd"
-  [class.is-even]="even"
-  [noImageTmpl]="noImage"
-  ></app-personnes>
-  
+<div class="row"> 
+
+        <app-personnes *ngFor="let per of etudiants;
+        index as index;let first = first;let last = last;
+        let even = even;let odd = odd;"
+        
+        (personneselected)="personneselectionne($event)" 
+        [personne]='per'
+        [index]='index' 
+        [class.is-first]="first"
+        [class.is-last]="last"
+        [class.is-odd]="odd"
+        [class.is-even]="even"
+        [noImageTmpl]="noImage"
+        class="col s12 m6 l4"
+        ></app-personnes>
+</div>
   </ng-container>
   
 

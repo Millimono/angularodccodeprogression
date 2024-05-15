@@ -12,6 +12,14 @@ import { FitredBycategoriePipe } from './fitred-bycategorie.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { DetailsPersonneComponent } from './PersonnesDetails/details.personne/details.personne.component';
 import { ListesPersonnesComponent } from './ListesPersones/listes.personnes/listes.personnes.component';
+import { PersonneInfoComponent } from './PersonneInfo/personne-info/personne-info.component';
+import { PersonneContactsComponent } from './PersonneContacts/personne-contacts/personne-contacts.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { LoginFormEnrermEnreComponent } from './LoginFormEnre/login-form-enrerm-enre/login-form-enrerm-enre.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +32,19 @@ import { ListesPersonnesComponent } from './ListesPersones/listes.personnes/list
     FitredBycategoriePipe,
     DetailsPersonneComponent,
     ListesPersonnesComponent,
+    PersonneInfoComponent,
+    PersonneContactsComponent,
+    LoginFormEnrermEnreComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatCardModule,
+    MatInputModule,
+    FormsModule,
+  ],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

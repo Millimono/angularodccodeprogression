@@ -1,0 +1,6 @@
+
+<div *ngIf="etudiant as etudiant">
+    <h4>Informations Supplémentaires</h4>
+    <p>Date de naissance: {{ etudiant.created | date }}</p>
+    <p>Matricule: {{ etudiant.id }}</p>
+</div>

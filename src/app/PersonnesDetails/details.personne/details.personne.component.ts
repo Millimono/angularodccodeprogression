@@ -27,5 +27,7 @@ export class DetailsPersonneComponent {
     }
   }
 
-  goBack() {}
+  goBack() {
+    this.route.navigate(['listepersonnes']);
+  }
 }

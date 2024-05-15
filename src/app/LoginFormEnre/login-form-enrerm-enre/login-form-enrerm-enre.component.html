@@ -1,0 +1,50 @@
+<mat-card class="login-page">
+    <mat-card-title>Login</mat-card-title>
+ 
+     <mat-card-content>
+
+         <form class="login-form data-form" #loginform="ngForm" (ngSubmit)="Loginclick(loginform,$event)">
+            
+            <mat-form-field>                
+                <input matInput type="email" name="email" 
+                placeholder="Email" ngModel #email="ngModel" [ngModel]="val.email"
+
+                required
+                minlength="4"
+                maxlength="50"
+                [ngModelOptions]="{name: 'userName'}"
+                [ngModelOptions]="{updateOn: 'blur'}"
+                (ngModelChange)="onEmailChange($event)"
+                >
+
+                <mat-error *ngIf="email.errors?.['required']"> the email is mandatory</mat-error>
+                <mat-error *ngIf="email.errors?.['minlength']"> Email must be at least 4 characters</mat-error>
+                <mat-error *ngIf="email.errors?.['email']"> this is not a valid email</mat-error>
+
+
+            </mat-form-field>
+
+            <mat-form-field>
+   
+                    <input matInput type="password" placeholder="Password" name="password" 
+                        ngModel
+                        required
+                     pattern="[a-z]+"
+                     #passw="ngModel">
+                     <mat-error *ngIf="passw.errors?.['pattern']"> this is not a valid password</mat-error>
+
+            </mat-form-field>
+            
+            <button mat-raised-button color="primary" type="submit" [disabled]="!loginform.valid">
+                 Login
+            </button>
+
+            <div class="form-val">
+                     {{email.valid}}
+
+            </div>
+                
+            </form>
+        </mat-card-content>
+    </mat-card>
+    
