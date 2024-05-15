@@ -5,10 +5,12 @@ import { ListesPersonnesComponent } from './ListesPersones/listes.personnes/list
 import { PersonneInfoComponent } from './PersonneInfo/personne-info/personne-info.component';
 import { PersonneContactsComponent } from './PersonneContacts/personne-contacts/personne-contacts.component';
 import { LoginFormEnrermEnreComponent } from './LoginFormEnre/login-form-enrerm-enre/login-form-enrerm-enre.component';
+import { LoginReactiveComponent } from './login-reactive/login-reactive/login-reactive.component';
 
 const routes: Routes = [
   { path: 'listepersonnes', component: ListesPersonnesComponent },
   { path: 'login', component: LoginFormEnrermEnreComponent },
+  { path: 'loginR', component: LoginReactiveComponent },
 
   {
     path: 'detaislpersonnes/:id',

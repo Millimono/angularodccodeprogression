@@ -18,8 +18,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginFormEnrermEnreComponent } from './LoginFormEnre/login-form-enrerm-enre/login-form-enrerm-enre.component';
+import { LoginReactiveComponent } from './login-reactive/login-reactive/login-reactive.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginFormEnrermEnreComponent } from './LoginFormEnre/login-form-enrerm-
     PersonneInfoComponent,
     PersonneContactsComponent,
     LoginFormEnrermEnreComponent,
+    LoginReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { LoginFormEnrermEnreComponent } from './LoginFormEnre/login-form-enrerm-
     MatCardModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
